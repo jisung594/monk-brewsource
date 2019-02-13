@@ -1,8 +1,12 @@
 class Api::V1::BeersController < ApplicationController
-  before_action :find_beer, only: [:update]
+  before_action :find_beer, only: [:show, :update]
   def index
     @beers = Beer.all
     render json: @beers
+  end
+
+  def show
+    render json: @beer
   end
 
   def update

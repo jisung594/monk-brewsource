@@ -6,6 +6,7 @@ ruby '2.3.3'
 
 gem 'active_model_serializers'
 
+gem 'faker'
 
 gem 'rest-client', '~> 2.0', '>= 2.0.2'
 gem 'json'
