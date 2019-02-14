@@ -5,6 +5,7 @@ class Api::V1::UsersController < ApplicationController
     render json: @users
   end
 
+
   def update
     @user.update(user_params)
     if @user.save
