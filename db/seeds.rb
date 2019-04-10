@@ -12,21 +12,81 @@ User.destroy_all
 
 require 'rest-client'
 require 'json'
-require 'faker'
-include Faker
+# require 'faker'
+# include Faker
 
 User.create(name:"Jonathan", email: "jisung594@gmail.com")
 
+# ALE / LAGER
+ale_data = RestClient.get('https://api.untappd.com/v4/search/beer?client_id=6D5942DDE0B12CE48D02DDD50C8F149BD1F5C548&client_secret=1EB0D16E128BBB45DB9F2FADB25698E473274131&q=ale&limit=1000')
+ale_hash = JSON.parse(ale_data)
 
-beer_data = RestClient.get('https://api.untappd.com/v4/search/beer?client_id=6D5942DDE0B12CE48D02DDD50C8F149BD1F5C548&client_secret=1EB0D16E128BBB45DB9F2FADB25698E473274131&q=beer&limit=500')
-beer_hash = JSON.parse(beer_data)
+ale_hash["response"]["beers"]["items"].each do |beer|
+  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["abv"], brewery: beer["brewery"]["brewery_name"])
+end
 
-beer_hash["response"]["beers"]["items"].each do |beer|
+lager_data = RestClient.get('https://api.untappd.com/v4/search/beer?client_id=6D5942DDE0B12CE48D02DDD50C8F149BD1F5C548&client_secret=1EB0D16E128BBB45DB9F2FADB25698E473274131&q=lager&limit=1000')
+lager_hash = JSON.parse(lager_data)
+
+lager_hash["response"]["beers"]["items"].each do |beer|
+  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["abv"], brewery: beer["brewery"]["brewery_name"])
+end
+
+
+# IPA
+ipa_data = RestClient.get('https://api.untappd.com/v4/search/beer?client_id=6D5942DDE0B12CE48D02DDD50C8F149BD1F5C548&client_secret=1EB0D16E128BBB45DB9F2FADB25698E473274131&q=ipa&limit=1000')
+ipa_hash = JSON.parse(ipa_data)
+
+ipa_hash["response"]["beers"]["items"].each do |beer|
+  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["abv"], brewery: beer["brewery"]["brewery_name"])
+end
+
+
+# PILSNER
+pilsner_data = RestClient.get('https://api.untappd.com/v4/search/beer?client_id=6D5942DDE0B12CE48D02DDD50C8F149BD1F5C548&client_secret=1EB0D16E128BBB45DB9F2FADB25698E473274131&q=pilsner&limit=1000')
+pilsner_hash = JSON.parse(pilsner_data)
+
+pilsner_hash["response"]["beers"]["items"].each do |beer|
+  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["abv"], brewery: beer["brewery"]["brewery_name"])
+end
+
+
+# PORTER / STOUT
+porter_data = RestClient.get('https://api.untappd.com/v4/search/beer?client_id=6D5942DDE0B12CE48D02DDD50C8F149BD1F5C548&client_secret=1EB0D16E128BBB45DB9F2FADB25698E473274131&q=porter&limit=1000')
+porter_hash = JSON.parse(porter_data)
+
+porter_hash["response"]["beers"]["items"].each do |beer|
+  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["abv"], brewery: beer["brewery"]["brewery_name"])
+end
+
+stout_data = RestClient.get('https://api.untappd.com/v4/search/beer?client_id=6D5942DDE0B12CE48D02DDD50C8F149BD1F5C548&client_secret=1EB0D16E128BBB45DB9F2FADB25698E473274131&q=stout&limit=1000')
+stout_hash = JSON.parse(stout_data)
+
+stout_hash["response"]["beers"]["items"].each do |beer|
+  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["abv"], brewery: beer["brewery"]["brewery_name"])
+end
+
+
+# FRUIT
+fruit_data = RestClient.get('https://api.untappd.com/v4/search/beer?client_id=6D5942DDE0B12CE48D02DDD50C8F149BD1F5C548&client_secret=1EB0D16E128BBB45DB9F2FADB25698E473274131&q=fruit&limit=1000')
+fruit_hash = JSON.parse(fruit_data)
+
+fruit_hash["response"]["beers"]["items"].each do |beer|
+  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["abv"], brewery: beer["brewery"]["brewery_name"])
+end
+
+# HEFEWEIZEN
+hefeweizen_data = RestClient.get('https://api.untappd.com/v4/search/beer?client_id=6D5942DDE0B12CE48D02DDD50C8F149BD1F5C548&client_secret=1EB0D16E128BBB45DB9F2FADB25698E473274131&q=hefeweizen&limit=1000')
+hefeweizen_hash = JSON.parse(hefeweizen_data)
+
+hefeweizen_hash["response"]["beers"]["items"].each do |beer|
   Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["abv"], brewery: beer["brewery"]["brewery_name"])
 end
 
 
 
+
+# ------------------------------------------------------------------------------
 # 100.times do
 #   Beer.create(
 #     name: Faker::Beer.name,
