@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :beers, only: [:index, :show, :update]
       resources :reviews, only: [:show, :new, :create]
+      resources :breweries
     end
   end
 
