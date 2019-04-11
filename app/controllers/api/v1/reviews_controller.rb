@@ -5,17 +5,10 @@ class Api::V1::ReviewsController < ApplicationController
     render json: @reviews
   end
 
-
-  def new
-    @review = Review.new
-  end
-
   def create
     @review = Review.create(review_params)
     render json: @review
   end
-
-
 
   def update
     @review.update(review_params)
@@ -29,7 +22,7 @@ class Api::V1::ReviewsController < ApplicationController
   private
 
   def review_params
-    params.permit(:title, :content, :rating, :beer_id, :user_id)
+    params.require(:review).permit(:title, :content, :rating, :beer_id, :user_id)
   end
 
   def find_review

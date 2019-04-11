@@ -23,14 +23,14 @@ ale_data = RestClient.get('https://api.untappd.com/v4/search/beer?client_id=6D59
 ale_hash = JSON.parse(ale_data)
 
 ale_hash["response"]["beers"]["items"].each do |beer|
-  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["abv"], brewery: beer["brewery"]["brewery_name"])
+  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["beer_abv"], brewery: beer["brewery"]["brewery_name"])
 end
 
 lager_data = RestClient.get('https://api.untappd.com/v4/search/beer?client_id=6D5942DDE0B12CE48D02DDD50C8F149BD1F5C548&client_secret=1EB0D16E128BBB45DB9F2FADB25698E473274131&q=lager&limit=1000')
 lager_hash = JSON.parse(lager_data)
 
 lager_hash["response"]["beers"]["items"].each do |beer|
-  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["abv"], brewery: beer["brewery"]["brewery_name"])
+  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["beer_abv"], brewery: beer["brewery"]["brewery_name"])
 end
 
 
@@ -39,7 +39,7 @@ ipa_data = RestClient.get('https://api.untappd.com/v4/search/beer?client_id=6D59
 ipa_hash = JSON.parse(ipa_data)
 
 ipa_hash["response"]["beers"]["items"].each do |beer|
-  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["abv"], brewery: beer["brewery"]["brewery_name"])
+  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["beer_abv"], brewery: beer["brewery"]["brewery_name"])
 end
 
 
@@ -48,7 +48,7 @@ pilsner_data = RestClient.get('https://api.untappd.com/v4/search/beer?client_id=
 pilsner_hash = JSON.parse(pilsner_data)
 
 pilsner_hash["response"]["beers"]["items"].each do |beer|
-  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["abv"], brewery: beer["brewery"]["brewery_name"])
+  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["beer_abv"], brewery: beer["brewery"]["brewery_name"])
 end
 
 
@@ -57,14 +57,14 @@ porter_data = RestClient.get('https://api.untappd.com/v4/search/beer?client_id=6
 porter_hash = JSON.parse(porter_data)
 
 porter_hash["response"]["beers"]["items"].each do |beer|
-  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["abv"], brewery: beer["brewery"]["brewery_name"])
+  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["beer_abv"], brewery: beer["brewery"]["brewery_name"])
 end
 
 stout_data = RestClient.get('https://api.untappd.com/v4/search/beer?client_id=6D5942DDE0B12CE48D02DDD50C8F149BD1F5C548&client_secret=1EB0D16E128BBB45DB9F2FADB25698E473274131&q=stout&limit=1000')
 stout_hash = JSON.parse(stout_data)
 
 stout_hash["response"]["beers"]["items"].each do |beer|
-  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["abv"], brewery: beer["brewery"]["brewery_name"])
+  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["beer_abv"], brewery: beer["brewery"]["brewery_name"])
 end
 
 
@@ -73,7 +73,7 @@ fruit_data = RestClient.get('https://api.untappd.com/v4/search/beer?client_id=6D
 fruit_hash = JSON.parse(fruit_data)
 
 fruit_hash["response"]["beers"]["items"].each do |beer|
-  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["abv"], brewery: beer["brewery"]["brewery_name"])
+  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["beer_abv"], brewery: beer["brewery"]["brewery_name"])
 end
 
 # HEFEWEIZEN
@@ -81,7 +81,7 @@ hefeweizen_data = RestClient.get('https://api.untappd.com/v4/search/beer?client_
 hefeweizen_hash = JSON.parse(hefeweizen_data)
 
 hefeweizen_hash["response"]["beers"]["items"].each do |beer|
-  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["abv"], brewery: beer["brewery"]["brewery_name"])
+  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["beer_abv"], brewery: beer["brewery"]["brewery_name"])
 end
 
 

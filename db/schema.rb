@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_04_10_215942) do
     t.string "name"
     t.string "style"
     t.string "description"
-    t.string "abv"
+    t.float "abv"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "brewery"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2019_04_10_215942) do
   create_table "reviews", force: :cascade do |t|
     t.string "title"
     t.string "content"
-    t.string "rating"
+    t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "beer_id"
