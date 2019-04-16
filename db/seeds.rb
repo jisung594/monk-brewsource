@@ -13,8 +13,6 @@ Brewery.destroy_all
 
 require 'rest-client'
 require 'json'
-# require 'faker'
-# include Faker
 
 User.create(name:"Jonathan", email: "jisung594@gmail.com")
 
