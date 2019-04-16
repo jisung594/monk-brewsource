@@ -84,6 +84,15 @@ hefeweizen_hash["response"]["beers"]["items"].each do |beer|
   Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["beer_abv"], brewery: beer["brewery"]["brewery_name"])
 end
 
+# WHEAT
+wheat_data = RestClient.get('https://api.untappd.com/v4/search/beer?client_id=6D5942DDE0B12CE48D02DDD50C8F149BD1F5C548&client_secret=1EB0D16E128BBB45DB9F2FADB25698E473274131&q=wheat&limit=1000')
+wheat_hash = JSON.parse(wheat_data)
+
+wheat_hash["response"]["beers"]["items"].each do |beer|
+  Beer.create(name: beer["beer"]["beer_name"], image: beer["beer"]["beer_label"], style: beer["beer"]["beer_style"], description: beer["beer"]["beer_description"], abv: beer["beer"]["beer_abv"], brewery: beer["brewery"]["brewery_name"])
+end
+
+
 
 # BREWERIES
 
