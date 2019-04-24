@@ -13,9 +13,6 @@ an online community space for enthusiasts and hobbyists alike.
 - [Ruby](https://www.ruby-lang.org/en/)
 - [PostgreSQL](https://www.postgresql.org/)
 
-<b>Other</b>
-- Auth
-
 
 ## Installation Instructions
 1. Install gems
